@@ -14,6 +14,7 @@ GitHub: cloud based repo sharing, need to create account
 Git Kraken: GUI (graphical user interface, means can click and point) for interaction with repos
 Command line/Terminal/ Git  Bash: ways of providing commands directing to comp
 SSH keys(secure shell): Way of doing secure file transfers how we pass back forth with GitHub
+repo:a folder but not exactly same as a folder. cannot be under another repository. update using pull or push buttons of GitKraken. 
 
 HAS_Tools (just a folder)
 -Course-materal-21 (repo, can rename repo folder but not things within it)   where all assignments materials will be posted. You can’t nake changes. Pull only
@@ -27,7 +28,21 @@ HAS_Tools (just a folder)
 --cheat sheet
 -class notes
 
-GitHub: remote repositony
+GitHub: remote repository
+=========================================
+**Clone,Fork Commit,Push,Pull and Fetch
+
+Clone is copying the remote repository to a local machine that can be done using a command “git clone”. Any changes made in this cloned repository can be shown in the original repository. 
+
+Fork is copying a repository but with full control of the copied repository, which is a new repository and any changes to the forked repository will not be reflected to the original repository.
+
+Commit is recording changes to files we made with a unique ID.
+
+Push is used to upload committed local changes to the remote repository.
+
+Pull is taking all changes from the remote repository to your local and update the local repository.
+Fetch is a way to download all changes to your local and review it; however, fetch will not integrate all new changes with the local repository. 
+
 
 ‘：’： colon
 ===================
