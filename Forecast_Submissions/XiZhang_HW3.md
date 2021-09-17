@@ -3,6 +3,7 @@ name: Xingyu Zhang
 date: Sep 13th
 assignment number: 3rd
 
+## Grade 3/3: Great job! Next time please add some formatting to your markdown file so its easier to read. You can check out the markdown cheat sheet in the course materials folder if you want more information on how to do this or you can ask me questions. 
 
 ==========================================================================================
 Three criteria were used to select flow values for week 1 and week 2 forecast. September, day 12-18 (19-25) for week 1 (2), and flow of less than 200 cfs. The idea behind those criteria is to construct a flow climatology at the same time. Moreover, I used flow of 200 cfs as an extra standard because flows in previous two weeks are less than 200 cfs and less precipitation forecasted for week 1 and 2.
