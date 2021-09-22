@@ -110,7 +110,7 @@ print(np.mean(flow_pick2))
 
 mybins = np.linspace(0, 600, num=2000) 
 #Step 2: plotting the histogram
-plt.hist(flow_data[(flow_data[:,2] > 15) & (flow_data[:,1] ==9 ),3], bins = mybins)
+plt.hist(flow_data[(flow_data[:,2] > 15) & (flow_data[:,1] ==9 ),3], bins = mybins,color='black')
 plt.title('Streamflow')
 plt.xlabel('Flow [cfs]')
 plt.ylabel('Count')
