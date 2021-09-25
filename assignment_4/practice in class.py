@@ -18,3 +18,14 @@ for i in range(matrix.shape[0]):
 for j in range(matrix.shape[1]):
     print((j+1),'colomn',np.mean(matrix[:,j]))
 # %%
+
+X1=np.arange(10)+1
+X2=1.3
+
+X3=X1//X2
+print(X3)
+# %%
+
+np.max(np.floor(X1/X2))
+
+# %%
