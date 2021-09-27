@@ -3,6 +3,8 @@ name: Xingyu Zhang
 date: Sep 27th
 assignment number: 5th
 
+##Don't forget to grade my hw4 and cheatsheet2.
+
 
 
 1. Provide a summary of the data frames properties.
