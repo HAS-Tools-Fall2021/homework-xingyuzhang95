@@ -15,7 +15,7 @@ filepath = os.path.join('data', filename)
 print(os.getcwd())
 print(filepath)
 
-filepath = '../data/streamflow_week2.txt'
+filepath = '../data/streamflow_week5.txt'
 
 # %%
 # Read the data into a pandas dataframe
@@ -42,26 +42,46 @@ np.mean(flow)
 flow.mean()
 flow.describe()
 # %%
-
+#question 3
 data_group=data.groupby(["month"])
 groupflow=data_group["flow"]
 groupflow.mean()
 data.head(5)
 data.tail(10)
-
+# %%
+#question 4
 datasort=data.sort_values(by="flow", ascending = True)
 datasort.head(5)
 
+datasort=data.sort_values(by="flow", ascending = True)
+datasort.tail(5)
+# %%
 #question 5
 #Create space for min/max each month
 maxyears=np.zeros(12)
 minyears=np.zeros(12)
+minflow=np.zeros(12)
+maxflow=np.zeros(12)
 
 #month+1=Jan
 for month in range(12):
-        print(month) 
+        #print(month) 
         monthdata=data[data["month"]==(month+1)]
         datasort=monthdata.sort_values(by="flow", ascending = True)
         minyears[month]=datasort["year"].head(1)
+        minflow[month]=datasort["flow"].head(1)
         maxyears[month]=datasort["year"].tail(1)
+        maxflow[month]=datasort["flow"].tail(1)
+print('minyears',minyears)
+print('maxyears',maxyears)
+
+# %%
+
+#question 6
+week1_forecast = 200
+upper_limit = week1_forecast*1.1
+lower_limit = week1_forecast*0.9
+
+array_q6 = data.index[(data['flow'] <= upper_limit) \
+        & (data['flow'] >= lower_limit)].values
 # %%

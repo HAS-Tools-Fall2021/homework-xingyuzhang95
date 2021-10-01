@@ -85,30 +85,15 @@ agency_cd	    site_no	datetime	flow   code	year  month	day
 year (i.e. you will find 12 maxes and 12 mins) and report back 
 what year these occurred in.
 
-I could not figure this part quite out... here is the code I tried
-to use:
-
-Q5 = data.sort_values(['month','flow'], ascending= False)
-
-print(Q5)
-
-Q5.describe()
+minyears [2003. 1991. 1989. 2018. 2004. 2012. 2012. 2019. 2020. 2020. 2016. 2012.]
+maxyears [1993. 1993. 1995. 1991. 1992. 1992. 2021. 1992. 2004. 2010. 2004. 2004.]
 
 6. Provide a list of historical dates with flows that are within 
 10% of your week 1 forecast value. If there are none than increase 
 the %10 window until you have at least one other value and report 
 the date and the new window you used
 
-My code is not running but this is what my code looks like. 
-
-week1f = 400
-
-upperlimit = week1f*1.1
-lowerlimit = week1f*0.9
-
-array = (data(['flow']>= upperlimit)& (data["flow"] <= lowerlimit)]
-
-array.values
+There has a total of 2198 historical dates with flows that are within 10% of my week 1 forecast value (200cfs). See more details in the python script.
 
 
 ####Forecasting numbers
