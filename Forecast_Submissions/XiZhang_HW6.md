@@ -3,6 +3,11 @@
 ### Assignment 6
 </br>
 
+____
+## Grade
+3/3: Great work! Thank you for adding the markdown formatting it is much easier to follow now. I like all the updates you made to the plots. 
+___
+
 ### Summary and supporting plots
 Given September flow values and October flow distribtuion, I predicted flows during next week and two weeks later are 80 cfs and 80 cfs, respectively.
 </br>

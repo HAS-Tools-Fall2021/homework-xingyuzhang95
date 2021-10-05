@@ -3,6 +3,11 @@ name: Xingyu Zhang
 date: Sep 27th
 assignment number: 5th
 
+___
+## Grade
+3/3 : Nice job on the python! But your work is very hard to follow because you have no formatting in your markdown file. Please make sure you preview it next time. Come see me if you have questions. Next week I will take off 1 point if you don't have formatting in your file. 
+____
+
 ##Don't forget to grade my hw4 and cheatsheet2.
 
 
