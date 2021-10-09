@@ -9,7 +9,7 @@
 </br>
 
 ### Code instruction
-- please download this file in the code_review1 folder; some code may be not as efficient and effective as we expected. Therefore, please leave your revision or suggestions at the end of this file.
+- please download this whole folder; this folder include 3 plots, 1 code and 1 data. Some code may be not as efficient and effective as we expected. Therefore, please leave your revision or suggestions at the end of this file.
 - You will see three plots generated after the run, which will be used in this markdown file.
 - Go through the generated plots and have a sense of what the flow will be for next week (hint: we know the October mean and the evolution trend of October flow this year; then guess a value).
 - Fill all blanks.
