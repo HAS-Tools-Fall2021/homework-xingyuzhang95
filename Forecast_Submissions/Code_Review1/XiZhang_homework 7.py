@@ -16,8 +16,8 @@ import dataretrieval.nwis as nwis
 # %%
 # Set the file name and path to where you have stored the data
 
-filename = 'streamflow_week6.txt'
-filepath = os.path.join('../../data', filename)
+filename = 'streamflow_week7.txt'
+filepath = os.path.join('..\Code_Review1', filename)
 print(os.getcwd())
 print(filepath)
 

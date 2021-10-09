@@ -26,7 +26,7 @@ We generated three plots as follows:
 3. boxplot the flow difference between each month.Jun has the lowest flow and Mar has the largest.
   ![picture 3](./p3_boxplot_monthly_diff.png)
   
-- Therefore, we forecasted weekly mean for next week and two weeks laters should be () and () cfs, respectively. 
+- Therefore, we forecasted weekly mean for next week and two weeks laters should be (80) and (80) cfs, respectively. 
 </br>
 
 ### Code revision or suggestion
