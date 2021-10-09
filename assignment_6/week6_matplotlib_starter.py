@@ -122,3 +122,20 @@ fig.savefig("p6_OctvsNov_PDF.png",dpi=300)
 #Figure out how to do multi conditionals
 
 # %%
+def month_median(month, num_of_day, start_year, end_year, data):
+        #calculate the median
+        median=np.zeros(num_of_day)
+        for d in range(num_of_day):
+                daytemp = d+1
+                tempdata = data[(data['year'] >= start_year) &\
+                        (data['month'] == month) & \
+                        (data['year'] <= end_year)&\
+                        (data['day'] == daytemp)]
+                median[d] = np.median(tempdata['flow'])
+        return median
+
+month_median(10,31,2016,2020,data)
+
+
+
+# %%
