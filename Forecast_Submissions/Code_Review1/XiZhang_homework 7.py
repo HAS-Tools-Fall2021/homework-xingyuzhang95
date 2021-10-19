@@ -60,7 +60,7 @@ Oct_4th_data = data[(data['month'] == 10) & (data['day'] >= 23) & (data['day'] <
         & (data['year'] <= 2020) ].groupby('year').mean()
 ax.plot(Oct_data.index, Oct_data['flow'], label='3rd week')
 ax.plot(Oct_data.index, Oct_4th_data['flow'], label='4th week')
-ax.set(title="Observed Flow for Oct 17th to 23rd", xlabel="yeaar", ylabel="Weekly Avg Flow [cfs]",
+ax.set(title="Observed Flow for Oct 17th to 23rd", xlabel="year", ylabel="Weekly Avg Flow [cfs]",
         yscale='log', )
 ax.text(1995, 380, 'week 3 mean = '+str(round(np.mean(Oct_data['flow']),3))\
         , fontsize=12)
