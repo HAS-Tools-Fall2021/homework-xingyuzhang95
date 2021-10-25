@@ -9,7 +9,7 @@ from matplotlib.dates import DateFormatter
 
 # %%
 
-filename = 'streamflow_week6.txt'
+filename = 'streamflow_week2.txt'
 filepath = os.path.join('../data', filename)
 print(os.getcwd())
 print(filepath)
@@ -94,13 +94,14 @@ ax.set(title="Observed Flow", xlabel="Date",
 # Setting a column as datatime after the fact
 data3 = data.copy()
 print(data3.dtypes)
-data3['datatime'] = pd.to_datetime(data3['datetime'])
+data3['datetime'] = pd.to_datetime(data3['datetime'])
 print(data3.dtypes)
 
 # %%
 # With datetimes we can easily subset our values using the date info
 #Grab out just a year or a month 
 datai["2013"].head()
+datai.loc['2013-01-03']
 datai[datai.index.month == 5]
 datai['2013-01-01':'2020-08-31'].head()
 
@@ -114,16 +115,9 @@ datai.index.dayofweek
 # its just a little more  complicated
 pd.DatetimeIndex(data2['datetime']).year
 
-# or grab out any date you want
-datai.loc["1989-01-01"]
-
-# or for a range of dates
-datai.loc["1989-01-01":"1989-01-07"]
-
-
 # %%
 # the best part is resampling though!!
-data_w = datai.resample("w").mean()
+data_w = datai.resample("M").mean()
 data_wmax = datai.resample("w").max()
 
 print(data_w.head())
@@ -142,7 +136,7 @@ data_y2 = data2.resample("Y", on='datetime').mean()
 # You can also control the formatting that is used
 
 #Selecting the date format I would like here
-date_form = DateFormatter("%Y/%d")
+date_form = DateFormatter("%y/%m")
 
 fig, ax = plt.subplots()
 ax.plot(datai.flow['2001'])
@@ -151,10 +145,48 @@ ax.set(title="Observed Flow", xlabel="Date",
        yscale='log')
 ax.xaxis.set_major_formatter(date_form)
 
-
 # %%
+#Plotting October flow
+oct_flow = datai[datai.index.month == 10]
+datai['day'] = datai.index.day
+oct_median = datai.groupby(datai.index.day).median()
+oct_median = datai.groupby('day').median()
+oct_max = datai.groupby('day').max()
+oct_min = datai.groupby('day').min()
 
-#data_flow=datai[datai.index.month==10]
-Oct_mean=datai.groupby(datai.index.day).median
-Oct_max=datai.groupby(datai.index.day).max
-# %%
+# 1. Timeseries of observed weekly flow values
+fig, ax = plt.subplots()
+ax.plot(oct_median['flow'], color='grey',
+        linestyle='dashed', label='Median')
+ax.fill_between(oct_max.index, oct_min['flow'], oct_max['flow'], color = 'blue', alpha=0.1)
+ax.plot(oct_min['flow'], color='blue', linestyle='dashed', label='Min')
+ax.plot(oct_max['flow'], color='blue', linestyle='dashed', label='Max')
+ax.plot(oct_flow["2020"].day, oct_flow["2020"].flow, color='black', label='2020 flow')
+ax.set(title="Observed Flow", xlabel="Date",
+       ylabel="Daily Avg Flow [cfs]",
+       yscale='log')
+ax.legend()
+
+2. Timeseries of monthly flow
+month_flow = datai.resample("M").sum()
+month_flow['month'] = month_flow.index.month
+
+mmean = month_flow.groupby('month').mean()
+mmin = month_flow.groupby('month').min()
+mmax = month_flow.groupby('month').max()
+
+fig, ax = plt.subplots()
+ax.plot(mmean['flow'], color='grey',
+        linestyle='dashed', label='Mean')
+ax.fill_between(mmin.index, mmin['flow'],
+                mmax['flow'], color='blue', alpha=0.1)
+ax.plot(mmin['flow'], color='blue', linestyle='dashed', label='Min')
+ax.plot(mmax['flow'], color='blue', linestyle='dashed', label='Max')
+ax.plot(month_flow["2020"].month, month_flow["2020"].flow,
+        color='purple', label='2020')
+ax.plot(month_flow["2021"].month, month_flow["2021"].flow,
+        color='green', label='2021')
+ax.set(title="Observed Monthly Flow", xlabel="Date",
+       ylabel="Monthly Total Flow [cfs]",
+       yscale='log')
+ax.legend()
