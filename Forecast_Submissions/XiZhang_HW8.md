@@ -6,6 +6,17 @@
 
 </center>
 
+
+## Grade:
+### 1. Forecast Submision:
+**1/3:** I don't see anything in your markdown here answering the questions of the assignment. This appears to be your submisison from Assignment 7. 
+
+### 2. Graded Script
+Refer to [the rubric](https://github.com/HAS-Tools-Fall2021/Course-Materials21/blob/main/Content/Starter_Codes/week7_code_review_rubric.md) for details on scoring:
+- **Readability:2/3** You had some comments however some of the comments appeared to be copied straight from the starter code and were not descriptive (e.g. the comment on the top line). Also you are misisng doc strings in your function. 
+- **Style:3/3** Good work no pep-8 errors
+- **Code:2/3** I don't see where in your code you are generating the forecast values or the print statments that were required. Also I had to adjust the path for the input data to get the code to run. Overall you code is nicely done although I would like to see a bit more analysis per my previous comment. 
+____________
 </br>
 
 ### Code instruction

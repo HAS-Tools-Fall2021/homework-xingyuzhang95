@@ -5,7 +5,15 @@
 ### 10/24/2021
 
 </center>
+
+## Grade:
+**3/3:** Nice work! 
+
+-- One note I'm fine with collaboraiton but I'm concerrned at the level of similarity between you and Xueyan's written assignments. You both have very similarly worded answers and you have downloaded the same data and gotten the same coefficien of determination on your models. Its fine if you are working together but it needs to be clear that you are doing your own work too. Let me know if you need any help from me to clarify what I mean by this. 
+____________
 </br>
+
+
 
 1. A brief summary of the how you chose to generate your forecast this week.
    
