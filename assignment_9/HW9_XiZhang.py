@@ -128,3 +128,18 @@ plt.show()
 fig.savefig('lm.jpg', dpi=300)
 
 # %%
+url = "https://daymet.ornl.gov/single-pixel/api/data?lat=34.9455&lon=-113.2549"  \
+       "&vars=prcp&start=1984-08-14&end=2014-10-18&format=json"
+response = req.urlopen(url)
+# Look at the kesy and use this to grab out the data
+responseDict = json.loads(response.read())
+responseDict['data'].keys()
+year = responseDict['data']['year']
+yearday = responseDict['data']['yday']
+precip = responseDict['data']['prcp (mm/day)']
+
+#make a dataframe from the data
+data = pd.DataFrame({'year': year,
+                     'yearday': yearday, "precip": precip})
+
+# %%
