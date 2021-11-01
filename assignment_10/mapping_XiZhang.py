@@ -73,7 +73,7 @@ plt.show()
 
 # Example reading in a geodataframe
 fiona.listlayers(file)
-file = os.path.join('..', '..', '..', '..', 'data/WBD_15_HU2_GDB', 'WBD_15_HU2_GDB.gdb')
+file = os.path.join('..', 'data/WBD_15_HU2_GDB', 'WBD_15_HU2_GDB.gdb')
 HUC6 = gpd.read_file(file, layer="WBDHU6")
 
 #Check the type and see the list of layers
@@ -134,42 +134,35 @@ points_project = point_df.to_crs(gages_AZ.crs)
 # NOTE: .to_crs() will only work if your original spatial object has a CRS assigned 
 # to it AND if that CRS is the correct CRS!
 
+
+#%%
+gages_AZ_project = gages_AZ.to_crs(HUC6.crs)
+
 # Now plot again
 fig, ax = plt.subplots(figsize=(5, 5))
-gages_AZ.plot(column='DRAIN_SQKM', categorical=False,
+gages_AZ_project.plot(column='DRAIN_SQKM', categorical=False,
               legend=True, markersize=45, cmap='Set2',
               ax=ax)
-points_project.plot(ax=ax, color='black', marker='*')
+point_df.plot(ax=ax, color='black', marker='*')
 
 
 # %%
 # Now put it all together on one plot
 HUC6_project = HUC6.to_crs(gages_AZ.crs)
 
-
 # Now plot again
 fig, ax = plt.subplots(figsize=(5, 5))
-gages_AZ.plot(column='DRAIN_SQKM', categorical=False,
+gages_AZ_project.plot(column='DRAIN_SQKM', categorical=False,
               legend=True, markersize=25, cmap='Set2',
+              legend_kwds={'label': r'DRAIN_SQKM'},
               ax=ax)
-points_project.plot(ax=ax, color='black', marker='*')
-HUC6_project.boundary.plot(ax=ax, color=None, 
+point_df.plot(ax=ax, color='black', marker='*')
+HUC6.boundary.plot(ax=ax, color=None, 
                            edgecolor='black', linewidth=1)
-ctx.add_basemap(ax)
+ctx.add_basemap(ax, crs=HUC6.crs)
+ax.set(title=" AZ",xlabel='latitude',ylabel='longitude')
+
+
 
 
 # %%
-# Adding a basemap:
-# Now put it all together on one plot
-HUC6_project = HUC6.to_crs(gages_AZ.crs)
-
-
-# Now plot again
-fig, ax = plt.subplots(figsize=(5, 5))
-gages_AZ.plot(column='DRAIN_SQKM', categorical=False,
-              legend=True, markersize=25, cmap='Set2',
-              ax=ax)
-points_project.plot(ax=ax, color='black', marker='*')
-HUC6_project.boundary.plot(ax=ax, color=None,
-                           edgecolor='black', linewidth=1)
-ctx.add_basemap(ax)
