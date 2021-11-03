@@ -156,10 +156,15 @@ gages_AZ_project.plot(column='DRAIN_SQKM', categorical=False,
               legend=True, markersize=25, cmap='Set2',
               legend_kwds={'label': r'DRAIN_SQKM'},
               ax=ax)
+#gages_AZ_project.plot(column='DRAIN_SQKM', categorical=False,
+#              legend=True, markersize=25, cmap='RdBu',
+#              legend_kwds={'label': r'DRAIN_SQKM'},
+#              ax=ax)
 point_df.plot(ax=ax, color='black', marker='*')
 HUC6.boundary.plot(ax=ax, color=None, 
                            edgecolor='black', linewidth=1)
 ctx.add_basemap(ax, crs=HUC6.crs)
+##ctx.add_basemap(ax, source=ctx.providers.Stamen.TonerLite, crs=gages_AZ.crs)
 ax.set(title=" AZ",xlabel='latitude',ylabel='longitude')
 
 
