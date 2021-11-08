@@ -21,8 +21,8 @@ from netCDF4 import Dataset
 # %%
 # Net CDF file historical time series
 # https://towardsdatascience.com/handling-netcdf-files-using-xarray-for-absolute-beginners-111a8ab4463f
-data_path = os.path.join('..', '..', '..', 'data',
-                         'Reanalysis_Prectiptest2.nc')
+data_path = os.path.join('..', 'data',
+                         'X150.135.165.15.307.9.47.12.nc')
 
 # Read in the dataset as an x-array
 dataset = xr.open_dataset(data_path)
@@ -62,11 +62,11 @@ lon = dataset["prate"]["lon"].values[0]
 print("Long, Lat values:", lon, lat)
 one_point = dataset["prate"].sel(lat=lat,lon=lon)
 one_point.shape
-
+# %%
 # use x-array to plot timeseries
 one_point.plot.line()
 precip_val = one_point.values
-
+# %%
 # Make a nicer timeseries plot
 f, ax = plt.subplots(figsize=(12, 6))
 one_point.plot.line(hue='lat',
@@ -76,14 +76,14 @@ one_point.plot.line(hue='lat',
                     markerfacecolor="purple",
                     markeredgecolor="purple")
 ax.set(title="Time Series For a Single Lat / Lon Location")
-
+# %%
 #Conver to dataframe
 one_point_df = one_point.to_dataframe()
 
 # %%
 # Making a spatial map of one point in time
 start_date = "2000-01-01"
-end_date = "2000-01-01"
+end_date = "2020-12-31"
 
 timeslice = dataset["prate"].sel(
     time=slice(start_date, end_date))
@@ -91,3 +91,5 @@ timeslice = dataset["prate"].sel(
 timeslice.plot()
 
 #from here you can do anything you want the same way we have when working with other dataframes
+
+# %%

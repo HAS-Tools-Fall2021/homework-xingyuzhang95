@@ -8,7 +8,8 @@ import matplotlib.pyplot as plt
 import datetime
 import os
 import dataretrieval.nwis as nwis
-
+#%%
+data = pd.DataFrame(np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]]), columns=['a', 'b', 'c'])
 # %%
 # There are 3 ways to read data: 
 # 1) Load a file that you have locally using read_table
