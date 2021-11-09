@@ -10,3 +10,5 @@ Also good start on the markdown but your formatting is not working. Refer back t
 1b. GitHub second submission: 10/10 great work this is a very good summary and thank you for cleaning up the files in this folder. 
 
 2. Python Basics: 10/10 good job!
+
+3. Pandas: 10/10 nice work

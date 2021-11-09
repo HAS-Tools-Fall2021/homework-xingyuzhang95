@@ -3,9 +3,14 @@
 ### Xingyu Zhang
 ### Assignment 9
 ### 10/24/2021
-
 </center>
 </br>
+
+
+___
+### Grade
+1/3 - It looks like you are plotting the same dataset from the starter code. The assignment was to download and plot a dataset not already provided.  Also, I dont see your python script with your submission here.  Finally, as noted previously I am now taking off points if you don't have a nicely formatted submission and you are not writing in complete sentences. You should have each of the questions numbered followed by your answer so its easier for me to follow and your answers need to be written in complete sentences. 
+___
 
 1.A brief summary of the how you chose to generate your forecast this week.
 
