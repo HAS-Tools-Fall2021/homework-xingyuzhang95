@@ -22,7 +22,7 @@ from netCDF4 import Dataset
 # Net CDF file historical time series
 # https://towardsdatascience.com/handling-netcdf-files-using-xarray-for-absolute-beginners-111a8ab4463f
 data_path = os.path.join('..', 'data',
-                         'X150.135.165.15.307.9.47.12.nc')
+                         'temperature.nc')
 
 # Read in the dataset as an x-array
 dataset = xr.open_dataset(data_path)

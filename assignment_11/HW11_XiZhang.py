@@ -115,25 +115,25 @@ dataset.dims
 dataset.coords
 
 # Focusing on just the precip values
-precip = dataset['prate']
+precip = dataset['air']
 precip
 
 # Now to grab out data first lets look at spatail coordinates:
-dataset['prate']['lat'].values.shape
+dataset['air']['lat'].values.shape
 # The first 4 lat values
-dataset['prate']['lat'].values
-dataset['prate']['lon'].values
+dataset['air']['lat'].values
+dataset['air']['lon'].values
 
 # Now looking at the time;
-dataset["prate"]["time"].values
-dataset["prate"]["time"].values.shape
+dataset["air"]["time"].values
+dataset["air"]["time"].values.shape
 
 
 # Now lets take a slice: Grabbing data for just one point
-lat = dataset["prate"]["lat"].values[0]
-lon = dataset["prate"]["lon"].values[0]
+lat = dataset["air"]["lat"].values[0]
+lon = dataset["air"]["lon"].values[0]
 print("Long, Lat values:", lon, lat)
-one_point = dataset["prate"].sel(lat=lat,lon=lon)
+one_point = dataset["air"].sel(lat=lat,lon=lon)
 one_point.shape
 # %%
 # use x-array to plot timeseries
@@ -160,7 +160,7 @@ one_point_df = one_point.to_dataframe()
 start_date = "2000-01-01"
 end_date = "2020-12-31"
 
-timeslice = dataset["prate"].sel(
+timeslice = dataset["air"].sel(
     time=slice(start_date, end_date))
 
 timeslice.plot()
