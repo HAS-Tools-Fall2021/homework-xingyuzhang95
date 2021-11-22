@@ -1,0 +1,5 @@
+Which person has the greatest difference between 1 week prediction and observation?
+min=[]
+max=[]
+for x in range(12):
+  temp=Read file
