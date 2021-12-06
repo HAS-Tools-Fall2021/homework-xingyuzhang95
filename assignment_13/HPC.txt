@@ -1,0 +1,14 @@
+
+(puma) [xingyuzhang@r1u04n2 ~]$ python3 -m venv ~/mypyenv
+(puma) [xingyuzhang@r1u04n2 ~]$ 
+(puma) [xingyuzhang@r1u04n2 ~]$ source ~/mypyenv/bin/activate
+(puma) (mypyenv) [xingyuzhang@r1u04n2 ~]$ 
+(puma) (mypyenv) [xingyuzhang@r1u04n2 ~]$ pip install pycurl
+Collecting pycurl
+  Downloading https://files.pythonhosted.org/packages/47/f9/c41d6830f7bd4e70d5726d26f8564538d08ca3a7ac3db98b325f94cdcb7f/pycurl-7.44.1.tar.gz (22
+7kB)
+Installing collected packages: pycurl
+  Running setup.py install for pycurl ... done
+Successfully installed pycurl-7.44.1
+
+(puma) (mypyenv) [xingyuzhang@r1u04n2 ~]$ source ~/.bashrc

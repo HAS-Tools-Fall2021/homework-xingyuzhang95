@@ -1,0 +1,7 @@
+This job is running on node r2u08n1.puma.hpc.arizona.edu
+This job is allocated 1 node(s), 1 core(s)/node and 5 Gigabytes of memory
+  File "HW15_Xingyu.py", line 2
+    pip install pandas
+        ^
+SyntaxError: invalid syntax
+Detailed performance metrics for this job will be available at https://metrics.hpc.arizona.edu/#job_viewer?action=show&realm=SUPREMM&resource_id=73&local_job_id=2720053 by 8am on 2021/12/07.
